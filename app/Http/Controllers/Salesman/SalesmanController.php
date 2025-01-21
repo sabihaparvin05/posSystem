@@ -7,7 +7,5 @@ use Illuminate\Http\Request;
 
 class SalesmanController extends Controller
 {
-    public Function index(){
-        return view('index');
-    }
+    
 }

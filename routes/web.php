@@ -43,5 +43,4 @@ Route::middleware(['auth', 'role:salesman'])->group(function () {
     // Additional salesman routes
 });
 
-Route::get('/homepage', [SalesmanController::class, 'index'])->name('salesman.dashboard');
 
