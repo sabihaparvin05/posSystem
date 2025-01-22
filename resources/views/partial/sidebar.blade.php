@@ -7,8 +7,8 @@
                     <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Products</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="./layout-blank.html">Add Product</a></li>
-                    <li><a href="./layout-one-column.html">Product List</a></li>
+                    <li><a href="{{ route('products.create') }}">Add Product</a></li>
+                    <li><a href="{{ route('products.list') }}">Product List</a></li>
                 </ul>
             </li>
             <li class="mega-menu mega-menu-sm">
@@ -16,8 +16,8 @@
                     <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Categories</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="./layout-blank.html">Add Category</a></li>
-                    <li><a href="./layout-one-column.html">Category List</a></li>
+                    <li><a href="{{ route('categories.create') }}">Add Category</a></li>
+                    <li><a href="{{ route('categories.list') }}">Category List</a></li>
                 </ul>
             </li>
             <li class="mega-menu mega-menu-sm">
@@ -88,18 +88,6 @@
                     <li><a href="./app-calender.html">Error 500</a></li>
                 </ul>
             </li>               
-            <li class="nav-label">Authentication</li>
-            <li>
-                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="icon-notebook menu-icon"></i><span class="nav-text">Authentication</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="./page-login.html">Login</a></li>
-                    <li><a href="./page-register.html">Register</a></li>
-                    <li><a href="./page-lock.html">Lock Screen</a></li>
-                    <li><a href="./page-lock.html">Recover Password</a></li>
-                </ul>
-            </li>
         </ul>
     </div>
 </div>
