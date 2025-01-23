@@ -32,7 +32,6 @@ class ProductController extends Controller
         // Validate the request
         $request->validate([
             'name' => 'required|string|max:255',
-            'slug' => 'nullable|string|unique:products|max:255', // Optional slug field
             'description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
             'quantity' => 'required|integer|min:0',
@@ -44,10 +43,13 @@ class ProductController extends Controller
             'status' => 'required|boolean',
         ]);
 
+         // Create the slug from the name
+         $slug = Str::slug($request->name, '-');
+
         // Create the product
         Product::create([
             'name' => $request->name,
-            'slug' => $request->slug ?: Str::slug($request->name), // Auto-generate slug if not provided
+            'slug' => $slug , 
             'description' => $request->description,
             'price' => $request->price,
             'quantity' => $request->quantity,
@@ -66,17 +68,16 @@ class ProductController extends Controller
 {
     $product = Product::where('slug', $slug)->firstOrFail();
     $categories = Category::all(); // Fetch categories for dropdown
-    return view('products.edit', compact('product', 'categories'));
+    return view('pages.product.edit', compact('product', 'categories'));
 }
 
 public function update(Request $request, $slug)
 {
-    $product = Product::where('slug', $slug)->firstOrFail();
+    
 
     // Validate the request
     $request->validate([
         'name' => 'required|string|max:255',
-        'slug' => 'nullable|string|unique:products,slug,' . $product->id,
         'description' => 'nullable|string',
         'price' => 'required|numeric|min:0',
         'quantity' => 'required|integer|min:0',
@@ -88,10 +89,17 @@ public function update(Request $request, $slug)
         'status' => 'required|boolean',
     ]);
 
+
+    $product = Product::where('slug', $slug)->firstOrFail();
+
+    // Update the slug if the name changes
+    $updatedSlug = ($product->name !== $request->name) ? Str::slug($request->name, '-') : $product->slug;
+
+
     // Update the product
     $product->update([
         'name' => $request->name,
-        'slug' => $request->slug ?: Str::slug($request->name),
+        'slug' => $updatedSlug,
         'description' => $request->description,
         'price' => $request->price,
         'quantity' => $request->quantity,

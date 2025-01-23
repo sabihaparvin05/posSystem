@@ -85,11 +85,11 @@
                     <div class="basic-form">
                         <div class="form-group">
                             <label for="price">Price:</label>
-                            <input type="number" class="form-control" id="price" name="price" step="0.01" value="{{ old('price') }}" required>
+                            <input type="number" class="form-control" id="price" name="price" step="0.01" min="1" value="{{ old('price') }}" required>
                         </div>
                         <div class="form-group">
                             <label for="quantity">Quantity:</label>
-                            <input type="number" class="form-control" id="quantity" name="quantity" value="{{ old('quantity') }}" required>
+                            <input type="number" class="form-control" id="quantity" name="quantity" min="1" value="{{ old('quantity') }}" required>
                         </div>
                     </div>
                 </div>

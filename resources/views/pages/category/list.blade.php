@@ -16,7 +16,6 @@
                                     <th>Name</th>
                                     <th>Description</th>
                                     <th>Status</th>
-                                    <th>Price</th>
                                     <th>Date</th>
                                     <th>Action</th>
                                 </tr>
@@ -34,7 +33,6 @@
                                                 <span class="badge badge-danger px-2">Inactive</span>
                                             @endif
                                         </td>
-                                        <td class="color-primary">${{ number_format($data->price, 2) }}</td> <!-- Price -->
                                         <td>{{ $data->created_at->format('M d, Y') }}</td> <!-- Created date -->
                                         <td>
                                             <span>

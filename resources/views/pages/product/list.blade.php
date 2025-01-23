@@ -38,7 +38,7 @@
                                         <td>{{ $product->part_number }}</td> 
                                         <td>{{ $product->vehicle_type }}</td> 
                                         <td>{{ $product->compatible_models }}</td> 
-                                        <td>${{ number_format($product->price, 2) }}</td>
+                                        <td>৳{{ number_format($product->price, 2) }}</td>
                                         <td>{{ $product->quantity  }}</td> 
                                         <td>
                                             @if ($product->status)

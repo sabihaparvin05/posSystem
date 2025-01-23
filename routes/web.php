@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Manager\ManagerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\Salesman\SalesmanController;
 
 
@@ -40,6 +41,11 @@ Route::post('/add-product',[ProductController::class, 'store' ])->name('products
 Route::get('/products/{slug}/edit', [ProductController::class, 'edit'])->name('products.edit');
 Route::post('/products/{slug}/update', [ProductController::class, 'update'])->name('products.update');
 Route::delete('/products/{slug}', [ProductController::class, 'destroy'])->name('products.destroy');
+
+//purchase routes
+Route::get('/purchase-list', [PurchaseController::class, 'purchaselist'])->name('purchase.list');
+Route::get('/add-purchase', [PurchaseController::class, 'createPurchase'])->name('purchase.create');
+Route::post('/add-purchase',[PurchaseController::class, 'storePurchase' ])->name('purchase.store');
 
 
 

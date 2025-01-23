@@ -34,8 +34,8 @@
                     <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Purchase</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="./layout-blank.html">Add purchase</a></li>
-                    <li><a href="./layout-one-column.html">Purchase List</a></li>
+                    <li><a href="{{ route('purchase.create') }}">Add purchase</a></li>
+                    <li><a href="{{ route('purchase.list') }}">Purchase List</a></li>
                 </ul>
             </li>
             <li class="mega-menu mega-menu-sm">
