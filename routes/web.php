@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Manager\ManagerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\SaleController;
 use App\Http\Controllers\Salesman\SalesmanController;
 
 
@@ -47,6 +48,12 @@ Route::get('/purchase-list', [PurchaseController::class, 'purchaselist'])->name(
 Route::get('/add-purchase', [PurchaseController::class, 'createPurchase'])->name('purchase.create');
 Route::post('/add-purchase',[PurchaseController::class, 'storePurchase' ])->name('purchase.store');
 
+//sales routes
+Route::get('/sales-list', [SaleController::class, 'saleslist'])->name('sales.list');
+Route::get('/add-sales', [SaleController::class, 'createSales'])->name('sales.create');
+Route::post('/add-sales',[SaleController::class, 'storeSales' ])->name('sales.store');
+Route::get('/product-price/{id}', [SaleController::class, 'getProductPrice'])->name('product.price');
+Route::get('/sales/{id}/bill', [SaleController::class, 'generateBill'])->name('sales.bill');
 
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
