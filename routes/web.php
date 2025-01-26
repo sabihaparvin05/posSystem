@@ -1,13 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\Manager\ManagerController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\SaleController;
+use App\Http\Controllers\ReturnController;
+use App\Http\Controllers\HolidayController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Manager\ManagerController;
 use App\Http\Controllers\Salesman\SalesmanController;
 
 
@@ -54,6 +56,17 @@ Route::get('/add-sales', [SaleController::class, 'createSales'])->name('sales.cr
 Route::post('/add-sales',[SaleController::class, 'storeSales' ])->name('sales.store');
 Route::get('/product-price/{id}', [SaleController::class, 'getProductPrice'])->name('product.price');
 Route::get('/sales/{id}/bill', [SaleController::class, 'generateBill'])->name('sales.bill');
+
+//return product routes
+Route::get('/return-list', [ReturnController::class, 'returnlist'])->name('return.list');
+Route::get('/return-create', [ReturnController::class, 'createReturn'])->name('return.create');
+Route::post('/add-return',[ReturnController::class, 'storeReturn' ])->name('return.store');
+
+
+//calender routes
+Route::post('/holidays', [HolidayController::class, 'storeHoliday'])->name('holidays.store');
+Route::get('/calendar', [HolidayController::class, 'showCalendar'])->name('calendar.show');
+Route::get('/holidays', [HolidayController::class, 'fetchHolidays'])->name('holidays.fetch');
 
 
 Route::middleware(['auth', 'role:admin'])->group(function () {

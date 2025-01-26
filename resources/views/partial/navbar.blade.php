@@ -173,7 +173,7 @@
                         <div class="dropdown-content-body">
                             <ul>
                                 <li><a href="javascript:void()">English</a></li>
-                                <li><a href="javascript:void()">Dutch</a></li>
+                                <li><a href="javascript:void()">বাংলা</a></li>
                             </ul>
                         </div>
                     </div>

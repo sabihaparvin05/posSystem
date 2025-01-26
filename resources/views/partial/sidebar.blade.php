@@ -43,8 +43,8 @@
                     <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Returns</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="./layout-blank.html">Add Return</a></li>
-                    <li><a href="./layout-one-column.html">Return List</a></li>
+                    <li><a href="{{ route('return.create') }}">Add Return</a></li>
+                    <li><a href="{{ route('return.list') }}">Return List</a></li>
                 </ul>
             </li>
             <li class="mega-menu mega-menu-sm">
@@ -76,7 +76,7 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="./app-profile.html">Profile</a></li>
-                    <li><a href="./app-calender.html">Calender</a></li>
+                    <li><a href="{{ route('calendar.show') }}">Calender</a></li>
                 </ul>
             </li>
             <li>

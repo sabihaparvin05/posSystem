@@ -69,6 +69,7 @@
             <div class="receipt-footer">
                 <p>Thank you for your purchase!</p>
                 <p><strong>YAMAHA</strong></p>
+                <p><strong>Return Policy:</strong> Products can be returned within 7 days of purchase with a valid receipt. Items must be in their original condition. For more details, please contact our support.</p>
             </div>
         </div>
     </div>

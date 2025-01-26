@@ -23,4 +23,8 @@ class RouteMiddleware
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
         'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
     ];
+
+    protected $except = [
+        'holidays', // Add your POST route here
+    ];
 }
